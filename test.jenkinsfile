@@ -9,7 +9,7 @@ node {
     ).trim()
     echo "HEAD: ${HEAD}"
     
-    PREVIOUS_BUILD = currentBuild.getPreviousBuild().getLog().grep('commit')
+    PREVIOUS_BUILD = currentBuild.getPreviousBuild().getLog(100).grep('commit')
     echo "PREVIOUS_BUILD: ${commitHash}"
   }
 }
