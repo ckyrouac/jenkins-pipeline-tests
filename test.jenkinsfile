@@ -9,9 +9,7 @@ node {
     ).trim()
     echo "HEAD: ${HEAD}"
     
-    PREVIOUS_BUILD = currentBuild.getPreviousBuild().description
-    def scmAction = PREVIOUS_BUILD?.actions.find { action -> action instanceof jenkins.scm.api.SCMRevisionAction }
-    def commitHash = scmAction?.revision?.hash
+    PREVIOUS_BUILD = currentBuild.getPreviousBuild().getLog().grep('commit')
     echo "PREVIOUS_BUILD: ${commitHash}"
   }
 }
