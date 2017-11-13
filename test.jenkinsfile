@@ -10,7 +10,7 @@ node {
     echo "HEAD: ${HEAD}"
     
     previousBuild = currentBuild.getPreviousBuild()
-    def stuff = previousBuild.getLog()
+    def stuff = previousBuild.grep('commit')
     echo "previousBuild: ${stuff}"
   }
 }
