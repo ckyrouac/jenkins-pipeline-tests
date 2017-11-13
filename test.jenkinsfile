@@ -9,6 +9,6 @@ node {
     ).trim()
     echo "HEAD: ${HEAD}"
     
-    echo currentBuild.getPreviousBuild().result
+    PREVIOUS_BUILD = currentBuild.getPreviousBuild().result
   }
 }
