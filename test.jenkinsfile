@@ -1,5 +1,6 @@
 node {
   stage("test") {
-    checkout(scm)
+    def retval = checkout(scm)
+    echo retval.toString()
   }
 }
