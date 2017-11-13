@@ -10,5 +10,6 @@ node {
     echo "HEAD: ${HEAD}"
     
     PREVIOUS_BUILD = currentBuild.getPreviousBuild().result
+    echo "PREVIOUS_BUILD: ${PREVIOUS_BUILD}"
   }
 }
